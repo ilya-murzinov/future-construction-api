@@ -1,0 +1,9 @@
+.gradle
+.idea
+*.iws
+*.iml
+*.ipr
+
+*.tmp
+
+**/build
