@@ -2,10 +2,12 @@ package futureconstruction.api
 
 import futureconstruction.domain.Mode
 import futureconstruction.service.ImageService
+import org.springframework.http.HttpStatus.NOT_FOUND
 import org.springframework.http.MediaType.APPLICATION_JSON
 import org.springframework.http.MediaType.IMAGE_JPEG
 import org.springframework.http.ResponseEntity
 import org.springframework.http.ResponseEntity.ok
+import org.springframework.http.ResponseEntity.status
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
@@ -28,7 +30,7 @@ class GenerateImageEndpoint(
                     it.isPresent ->
                         ok().contentType(IMAGE_JPEG).body(it.get())
                     else ->
-                        ok().contentType(APPLICATION_JSON).body(ErrorResponse())
+                        status(NOT_FOUND).contentType(APPLICATION_JSON).body(ErrorResponse())
                 }
             }
 }
