@@ -15,7 +15,6 @@ import org.junit.jupiter.api.Test
 import java.io.File
 
 class FileFinderTest {
-    private val prefix = "TEST_PREFIX"
     private val time = "000000_"
 
     @Test

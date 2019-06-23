@@ -23,7 +23,7 @@ To run all tests (unit + integration)
 ### Running
 
 ```
-java -jar build/future-construction.jar 
+java -jar build/libs/future-construction-api-0.1.0-SNAPSHOT.jar
 ```
 
 By default data is taken from test resources.
@@ -31,7 +31,7 @@ By default data is taken from test resources.
 To specify different path `data.path` parameter can be used: 
 
 ```
-java -jar -Ddata.path=/path/to/data build/future-construction.jar 
+java -jar -Ddata.path=/path/to/data build/libs/future-construction-api-0.1.0-SNAPSHOT.jar 
 ```
 
 ```bash
