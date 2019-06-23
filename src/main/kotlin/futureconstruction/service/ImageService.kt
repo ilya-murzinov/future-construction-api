@@ -3,15 +3,16 @@ package futureconstruction.service
 import futureconstruction.domain.Mode
 import org.springframework.stereotype.Component
 import reactor.core.publisher.Mono
-import reactor.core.scheduler.Scheduler
+import reactor.core.scheduler.Schedulers
 import java.util.Optional
 
 @Component
 class ImageService(
     private val fileFinder: FileFinder,
-    private val imageGenerator: ImageGenerator,
-    private val heavyScheduler: Scheduler
+    private val imageGenerator: ImageGenerator
 ) {
+
+    private val scheduler = Schedulers.newParallel("heavy")
 
     fun generateImage(prefix: String, mode: Mode): Mono<Optional<ByteArray>> =
         fileFinder.findImageSet(prefix)
@@ -22,5 +23,5 @@ class ImageService(
                 else
                     Mono.just(Optional.empty())
             }
-            .publishOn(heavyScheduler)
+            .publishOn(scheduler)
 }
