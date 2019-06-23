@@ -47,7 +47,7 @@ class GenerateImageControllerTest : AbstractIntegrationTest() {
                   "latitudeBand": "U",
                   "gridSquare": "UP",
                   "date": "2018-08-05",
-                  "channelMap": "visible"
+                  "channelMap": "vegetation"
                 }
             """.trimIndent())
             .exchange()

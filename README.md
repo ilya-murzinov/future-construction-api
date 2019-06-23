@@ -1,5 +1,7 @@
 # future-construction-api
 
+[![Build Status](https://travis-ci.org/ilya-murzinov/future-construction-api.svg?branch=master)](https://travis-ci.org/ilya-murzinov/future-construction-api)
+
 Service to fetch and process satellite data in order to turn the single-channel image data into standard RGB images that a human surveyor can look over.
 
 ### Requirements:
